@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<package name="shanyao.jiang.messageboard" namespace = "/" extends="struts-default">
+            <action name="index">
+                <result>/index.jsp</result>
+            </action>
+            <action name="welcome">
+    			<result>/pages/welcome.jsp</result>
+    		</action>
+    		<action name="loginpage">
+    		    <result>/pages/login.jsp</result>
+    		</action>
+    		<action name="registerpage">
+    		    <result>/pages/register.jsp</result>
+    		</action>
+    		<action name="*User" class="wjteam.actions.UserAction" method="{1}">
+    			<result type="dispatcher" name="Success">/pages/success.jsp</result>
+    			<result type="dispatcher" name="Failure">/pages/failure.jsp</result>
+    		</action>
+    </package>
+</struts>

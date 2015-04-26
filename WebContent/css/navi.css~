@@ -1,0 +1,9 @@
+body {
+    padding-top: 20px;
+}
+
+.nav-justified {
+  background-color: black;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

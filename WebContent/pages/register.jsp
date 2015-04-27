@@ -11,7 +11,7 @@
     <script src="js/bootstrap.js"></script>
   </head>
   <body>
-    <div class="header">
+    <div>
     	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
       	        <a class="navbar-brand font1" href="#">WJTeam</a>

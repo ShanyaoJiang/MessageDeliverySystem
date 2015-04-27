@@ -6,7 +6,7 @@
 <struts>
     <constant name="struts.devMode" value="true" />
     <constant name="struts.enable.DynamicMethodInvocation" value="true" />
-	<package name="shanyao.jiang.messageboard" namespace = "/" extends="struts-default">
+	<package name="shanyao.jiang.messageboard" namespace = "/" extends="struts-default, json-default">
             <action name="index">
                 <result>/index.jsp</result>
             </action>
@@ -23,5 +23,14 @@
     			<result type="dispatcher" name="Success">/pages/success.jsp</result>
     			<result type="dispatcher" name="Failure">/pages/failure.jsp</result>
     		</action>
+    		<action name="checkStatus" class="wjteam.actions.User4AJAX">
+    			<result name="Success" type="json">
+    				<param name="root">resultSS</param> 
+    			</result>
+    				<result name="Failure" type="json">
+    				<param name="root">resultSS</param> 
+    			</result>
+    		</action>
+
     </package>
 </struts>

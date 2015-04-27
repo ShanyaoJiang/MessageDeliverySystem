@@ -41,23 +41,78 @@
             <form action="loginUser" method="POST">
                 <div class="form-group">
                     <label>Email address</label>
-	            <input type="email" class="form-control" placeholder="Enter email">
+	            <input type="email" name="user.email" class="form-control" placeholder="Enter email">
                 </div>
                 <div class="form-group">
 	            <label>Password</label>
-                    <input type="password" class="form-control" placeholder="Enter password">
+                    <input type="password" name="user.password" class="form-control" placeholder="Enter password">
                 </div>
                 <div class="checkbox div4" >
                     <label>
      		        <input type="checkbox" disabled>Remember me
     	            </label>
-  	        </div>
+  	           </div>
                 <div class="pull-right">
                     <button type="submit" class="btn btn-default font3">Sign in</button>
                     <a class="btn btn-primary font3" href="registerpage">Join us</a>
                 </div>
             </form>
         </div>
+    </div>
+    <div class="div10">
+        <form action="" method="post">
+    	  <table >
+    			<tr>
+    				<td><label>Title  </label></td>
+    				<td><input type="text" class="form-control td1" placeholder="Enter title" size="80"></td>
+    			</tr>
+    			<tr style="height: 2px"></tr>
+    			<tr>
+    				<td><label>Content</label></td>
+    				<td><textarea class="form-control td1" rows="9" placeholder="Enter content"></textarea></td>
+    			</tr>
+    			<tr>
+    				<td><label>Location</label></td>
+    				<td>
+    					<select class="form-control td2">
+    						<option>Select</option>
+    						<option>NY</option>
+    						<option>CA</option>
+    						<option>NH</option>
+    						<option>NJ</option>
+    						<option>GA</option>
+    						<option>CT</option>
+    						<option>DE</option>
+    						<option>MA</option>
+    						<option>PA</option>
+    						<option>SC</option>
+    						<option>OH</option>
+    						<option>RL</option>
+    						<option>MD</option>
+    						<option>VA</option>
+    					</select>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td><label>Tag</label></td>
+    				<td>
+    					 <select class="form-control td2">
+    					 	<option>Coming Soon</option>
+    					 </select>
+    				</td>
+    			</tr>
+    		</table>
+    			 <div class="checkbox div4 div12" >
+                    <label>
+     		        <input type="checkbox" disabled>Dealer?
+    	            </label>
+  	           </div>
+                <div class="div11">
+                    <button type="submit" class="btn btn-primary btn-lg font3">Submit</button>
+                </div>
+    			
+    	</form>
+    	
     </div>
     <div class="footer">
         <div class = "div7">

@@ -34,6 +34,8 @@ body {
   margin: 20px;
   margin-left: 70%;
   overflow: auto;
+  font-style: italic;
+  
 }
 .div4 {
   float: left;
@@ -91,6 +93,9 @@ body {
 .div12 {
 	width: 59%;
 }
+.div13 {
+	display: none;
+}
 .td1 {
 	margin: 5px;
 }
@@ -106,6 +111,11 @@ body {
 .font2 {
   font-style: italic;
   font-size: 30px;
+}
+.font5 {
+	font-style: italic;
+	font-size: 18px;
+	color: white;
 }
 .font3 {
   font-style: italic;

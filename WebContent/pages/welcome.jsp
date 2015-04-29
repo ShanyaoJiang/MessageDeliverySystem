@@ -10,6 +10,8 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/byLocation.js"></script>
+    <script src="js/jquery.pagination.js" type="text/javascript"></script>  
+    <link href="css/pagination.css" rel="stylesheet" type="text/css" />  
   </head>
   <body>
     <div>
@@ -24,7 +26,10 @@
         	    <li><a href="#" disabled>Tag</a></li>
       	        </ul>
    	    </div>
-	    <div class="navbar-form pull-right">
+   	    <div id="div4p" class="navbar-form pull-right div13">
+   	    	<a class="btn btn-primary font3" href="#">Log out</a>
+   	    </div>
+	    <div id="div4n" class="navbar-form pull-right ">
                 <a class="btn btn-primary font3" href="registerpage">Sign up</a>
                 <a class="btn btn-default font3" href="loginpage">Sign in</a>
             </div>
@@ -59,22 +64,29 @@
             </form>
         </div>
     </div>
+    <div id="div4p">
+    	<table id="table4p" class="TableList">
+    		<tr class="TableHeader">
+    		<th>Titles</th>
+    		</tr>
+    	</table>
+    </div>
     <div class="div10">
-        <form action="" method="post">
+        <form action="submitMessage" method="POST">
     	  <table >
     			<tr>
     				<td><label>Title  </label></td>
-    				<td><input type="text" class="form-control td1" placeholder="Enter title" size="80"></td>
+    				<td><input type="text" name="msg.title" class="form-control td1" placeholder="Enter title" size="80"></td>
     			</tr>
     			<tr style="height: 2px"></tr>
     			<tr>
     				<td><label>Content</label></td>
-    				<td><textarea class="form-control td1" rows="9" placeholder="Enter content"></textarea></td>
+    				<td><textarea name="msg.content" class="form-control td1" rows="9" placeholder="Enter content"></textarea></td>
     			</tr>
     			<tr>
     				<td><label>Location</label></td>
     				<td>
-    					<select class="form-control td2">
+    					<select name="msg.location" class="form-control td2">
     						<option>Select</option>
     						<option>NY</option>
     						<option>CA</option>

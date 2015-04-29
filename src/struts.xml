@@ -7,6 +7,9 @@
     <constant name="struts.devMode" value="true" />
     <constant name="struts.enable.DynamicMethodInvocation" value="true" />
 	<package name="shanyao.jiang.messageboard" namespace = "/" extends="struts-default, json-default">
+            <interceptors>
+            	<interceptor name="checkLogin" class="wjteam.interceptors.LoginInterceptors"/>
+            </interceptors>
             <action name="index">
                 <result>/index.jsp</result>
             </action>
@@ -31,6 +34,17 @@
     				<param name="root">resultSS</param> 
     			</result>
     		</action>
-
+			<action name="submitMessage" class="wjteam.actions.Delivery">
+				<interceptor-ref name ="checkLogin"/>
+				<interceptor-ref name="defaultStack"/>  
+				<result type="redirect" name="Success">welcome</result>
+    			<result type="redirect" name="Failure">loginpage</result>
+    			<result type="redirect" name="login">loginpage.action</result>
+    		</action>  
+			<action name="pushPages" class="wjteam.actions.ForPages" method="pushPages">
+				<result name="Success" type="json">
+					<param name="root">json</param>
+				</result>
+			</action>	
     </package>
 </struts>

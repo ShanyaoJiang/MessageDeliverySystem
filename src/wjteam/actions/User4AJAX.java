@@ -15,9 +15,6 @@ import wjteam.orm.User;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class User4AJAX extends ActionSupport implements SessionAware {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private User user = new User();
 	private Map session;

@@ -21,15 +21,15 @@ public class MessageDao {
 	}
 	public boolean addMessage(Message msg) {
 		boolean flag = true;
-		String sql = "insert into message(author,title,content,location,messageid) values(?,?,?,?,?)";
+		String sql = "insert into message(author,title,content,location,messageid,authorid) values(?,?,?,?,?,?)";
 		try {
 			psmt = this.con.prepareStatement(sql);
 			psmt.setString(1, msg.getAuthor());
 			psmt.setString(2, msg.getTitle());
-			System.out.println(msg.getContent());
 			psmt.setString(3, msg.getContent());
 			psmt.setString(4, msg.getLocation());
 			psmt.setString(5, msg.getMessageId());
+			psmt.setString(6, msg.getAuthorId());
 			psmt.execute();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -50,18 +50,13 @@ public class MessageDao {
 		}
 		return flag;
 	}
-	public String getTitles(int curr) {
-		ArrayList<String> result = new ArrayList<String>();
-		String sql = "select title from message order by messageid limit ";
-		int tmp = (curr - 1) * 6;
-		sql = sql + tmp + "," + "6";
-		System.out.println(sql);
+	public int getNum() {
+		String sql = "SELECT count(*) number FROM message";
+		int result = 0;
 		try {
 			psmt = this.con.prepareStatement(sql);
 			ResultSet rs = psmt.executeQuery();
-			while(rs.next()) {
-				result.add(rs.getString("title"));
-			}
+			result = rs.getInt("number");
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -76,22 +71,60 @@ public class MessageDao {
 				e.printStackTrace();
 			}
 		}
-		String str = RowSetToJson(result, curr, 6);
+		return result;
+	}
+	public String getTitles(int curr) {
+		ArrayList<String> titles = new ArrayList<String>();
+		ArrayList<String> authors = new ArrayList<String>();
+		String sql = "select title, authorid from message order by messageid limit ";
+		String sqln = "SELECT count(*) FROM message";
+		int count = 0;
+		int tmp = (curr - 1) * 15;
+		sql = sql + tmp + "," + "15";
+		System.out.println(sql);
+		try {
+			psmt = this.con.prepareStatement(sql);
+			ResultSet rs = psmt.executeQuery();
+			while(rs.next()) {
+				titles.add(rs.getString("title"));
+				authors.add(rs.getString("authorid"));
+			}
+			psmt = this.con.prepareStatement(sqln);
+			rs = psmt.executeQuery();
+			rs.next();
+			count = rs.getInt(1);
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				psmt.close();
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				con.close();
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		String str = RowSetToJson(titles, authors, count, 15);
 		System.out.println(str);
 		return str;
 	}
 	
-    private static String RowSetToJson(ArrayList<String> rt,int count,int pageCount){
+    private static String RowSetToJson(ArrayList<String> titles, ArrayList<String> authors, int count,int pageCount){
    	 StringBuilder sb=new StringBuilder();
    	 try {
 			 sb.append("{\"pageCount\":\""+count+"\",\"pageData\":");
 			 sb.append("[");
-			 for(int i = 0; i < rt.size(); i++){
-					 if(i != rt.size() - 1){
-						 sb.append("\""+rt.get(i)+"\",");
+			 for(int i = 0; i < titles.size(); i++){
+					 if(i != titles.size() - 1){
+						 sb.append("{\"title\":\""+titles.get(i)+"\","); 
+						 sb.append("\"author\":\""+authors.get(i)+"\"},");  
+
 					 }else{
-						 sb.append("\""+rt.get(i)+"\"");
-					 }
+						 sb.append("{\"title\":\""+titles.get(i)+"\","); 
+						 sb.append("\"author\":\""+authors.get(i)+"\"}");					 }
 				 }
 			 sb.append("]}");
 			 

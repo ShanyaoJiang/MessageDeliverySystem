@@ -21,7 +21,8 @@ public class Delivery extends ActionSupport implements SessionAware{
 		msg.setMessageId(UUID.randomUUID().toString());
 		MessageDao dao = new MessageDao();
 		msg.setAuthor(session.get("userEmail").toString());
-		
+		msg.setAuthorId(session.get("userId").toString());
+		System.out.println(msg.getAuthorId());
 		if(dao.addMessage(msg)) {
 			return "Success";
 		}

@@ -1,7 +1,7 @@
 package wjteam.orm;
 
 public class Message {
-	private String messageId, title, content, author, tag, location, date;
+	private String messageId, title, content, author, tag, location, date, authorId;
 	private boolean gallery;
 	public String getMessageId() {
 		return messageId;
@@ -50,5 +50,11 @@ public class Message {
 	}
 	public void setGallery(boolean gallery) {
 		this.gallery = gallery;
+	}
+	public String getAuthorId() {
+		return authorId;
+	}
+	public void setAuthorId(String authorId) {
+		this.authorId = authorId;
 	}
 }

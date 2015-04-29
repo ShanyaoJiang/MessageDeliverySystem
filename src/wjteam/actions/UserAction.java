@@ -25,6 +25,8 @@ public class UserAction extends ActionSupport implements SessionAware {
 		User tmpUser = dao.getUser(user.getEmail());
 		if(tmpUser.getPassword()!= null && tmpUser.getPassword().equals(user.getPassword())) {
 			session.put("userEmail", user.getEmail());
+			session.put("userId", tmpUser.getUserId());
+			System.out.println(session.get("userId"));
 			return "Success";
 		}
 		else {

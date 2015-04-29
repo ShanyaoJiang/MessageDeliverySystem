@@ -1,140 +1,171 @@
 html {
-  position: relative;
-  min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
+
 body {
-  background: #fff8dc;
-  padding-top: 50px;
-  margin-bottom: 90px;
-  clear: both;
-  overflow: auto;
+	background: #fff8dc;
+	padding-top: 50px;
+	margin-bottom: 90px;
+	clear: both;
+	overflow: auto;
 }
+
 .div1 {
-  font-family: italic;
-  font-size: 20px;
-  color: white;
-  width: 120px;
-  height: 60px;
-  text-align: center;
-  line-height: 60px;
-  float: left;
-  margin: 8px;
-  background: orange;
-  border:1px solid #f8f8ff;
+	font-family: italic;
+	font-size: 20px;
+	color: white;
+	width: 120px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	float: left;
+	margin: 8px;
+	background: orange;
+	border: 1px solid #f8f8ff;
 }
+
 .div2 {
-  width: 65%;
-  margin: 20px;
-  border: 3px dashed #ffe4e1;
-  clear: both;
-  overflow: auto;
-  float: left;
+	width: 65%;
+	margin: 20px;
+	border: 3px dashed #ffe4e1;
+	clear: both;
+	overflow: auto;
+	float: left;
 }
+
 .div3 {
-  margin: 20px;
-  margin-left: 70%;
-  overflow: auto;
-  font-style: italic;
-  
+	margin: 20px;
+	margin-left: 70%;
+	overflow: auto;
+	font-style: italic;
 }
+
 .div4 {
-  float: left;
-  margin: 10px;
+	float: left;
+	margin: 10px;
 }
-.div5 {  
-  width: 30%;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  clear: both;
-  overflow: auto;
-  padding-bottom: 50px;
+
+.div5 {
+	width: 30%;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+	overflow: auto;
+	padding-bottom: 50px;
 }
+
 .div6 {
-  height: 140px ;
-  margin-bottom: 20px;
-  background: #008b8b;
-  font-family: italic;
-  font-size: 20px;
-  color: white;
-  clear: both;
-  overflow: auto;
+	height: 140px;
+	margin-bottom: 20px;
+	background: #008b8b;
+	font-family: italic;
+	font-size: 20px;
+	color: white;
+	clear: both;
+	overflow: auto;
 }
+
 .div7 {
-  width: 65%;
-  margin-left: 30px;
-  float: left; 
-  font-family: arial;
-  color: white;
+	width: 65%;
+	margin-left: 30px;
+	float: left;
+	font-family: arial;
+	color: white;
 }
+
 .div8 {
-  clear: both;
-  overflow: auto;
+	clear: both;
+	overflow: auto;
 }
+
 .div9 {
-  padding-top: 80px;
+	padding-top: 80px;
 }
+
 .div10 {
-  width: 90%;
-  margin-top: 5px;
-  margin-bottom: 110px;
-  margin-left: 20px;
-  margin-right: 20px;
-  border: 3px dashed #ffe4e1;
-  clear: both;
-  overflow: auto;	
-  font-style: italic;
-  font-size: 20px;
+	width: 90%;
+	margin-top: 5px;
+	margin-bottom: 110px;
+	margin-left: 20px;
+	margin-right: 20px;
+	border: 3px dashed #ffe4e1;
+	clear: both;
+	overflow: auto;
+	font-style: italic;
+	font-size: 20px;
 }
+
 .div11 {
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .div12 {
 	width: 59%;
 }
+
 .div13 {
 	display: none;
 }
+
+.div14 {
+	font-style: italic;
+	width: 90%;
+	margin: 20px;
+	border: 3px dashed #ffe4e1;
+	clear: both;
+	overflow: auto;
+	float: left;
+}
+
 .td1 {
 	margin: 5px;
 }
+
 .td2 {
 	margin: 5px;
 	width: 50%;
 	float: left;
 }
+
 .font1 {
-  font-style: italic;
-  font-size: 20px;
+	font-style: italic;
+	font-size: 20px;
 }
+
 .font2 {
-  font-style: italic;
-  font-size: 30px;
+	font-style: italic;
+	font-size: 30px;
 }
+
 .font5 {
 	font-style: italic;
 	font-size: 18px;
 	color: white;
 }
+
 .font3 {
-  font-style: italic;
-  font-size: 14px;
+	font-style: italic;
+	font-size: 14px;
 }
+
 .font4 {
-  text-align: center;
-  font-family: serif;
+	text-align: center;
+	font-family: serif;
 }
 
 .footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  height: 80px;
-  background: #008b8b;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	height: 80px;
+	background: #008b8b;
 }
+
 .roundCorner {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
 }

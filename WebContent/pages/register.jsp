@@ -9,6 +9,9 @@
     <link href="css/my.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/validator.min.js"></script>
+    
+
   </head>
   <body>
     <div>
@@ -34,22 +37,25 @@
             <div class="font4">
                 <h1>Welcome</h1>
             </div>
-            <form action="registerUser" method="POST">
+            <form id="registerForm" action="registerUser" method="POST" data-toggle="validator">
                 <div class="form-group">
-                    <label>Email address</label>
-	            <input type="email" name="user.email" class="form-control" placeholder="Enter email">
+                    <label for="email" class="control-label">Email address</label>
+	            <input id="email" type="email" name="user.email" class="form-control" data-error="Bruth,that email address is invalid" placeholder="Enter email" required>
+	            <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
-                    <label>Nickname/ID</label>
-	            <input type="text" name="user.userId" class="form-control" placeholder="Enter id">
+                    <label for="Nickname" class="control-label">Nickname/ID</label>
+	            <input id="Nickname" type="text" name="user.userId"  class="form-control" placeholder="Enter id" required>
                 </div>
                 <div class="form-group">
-	            <label>Password</label>
-                    <input type="password" name="user.password" class="form-control" placeholder="Enter password">
+	            <label for="inputPassword" class="control-label">Password</label>
+                    <input type="password" data-minlength="7" data-error="Minimum of 7 characters" id="inputPassword" name="user.password" class="form-control" placeholder="Enter password" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
-	            <label>Retype Password</label>
-                    <input type="password" class="form-control" placeholder="Retype password">
+	            <label for="retypePassword" class="control-label">Retype Password</label>
+                    <input type="password" class="form-control" id="retypePassword" data-match="#inputPassword" placeholder="Retype password" data-match-error="Whoops, these don't match" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary font3">Sign up</button>

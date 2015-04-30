@@ -11,6 +11,8 @@
 <script src="js/bootstrap.js"></script>
 <script src="js/byLocation.js"></script>
 <script src="js/jquery.twbsPagination.js" type="text/javascript"></script>
+<script src="js/validator.min.js"></script>
+
 </head>
 <body>
 	<div>
@@ -74,25 +76,26 @@
 			<tbody id="tbody4p">
 			</tbody>
 		</table>
-		<ul id="pagination" class="pagination"></ul>	
+		<ul id="pagination" class="pagination-sm"></ul>	
 	</div>
 	<div class="div10">
-		<form action="submitMessage" method="POST">
+		<form id="messageForm" action="submitMessage" method="POST">
+			<fieldset>
 			<table>
 				<tr>
 					<td><label>Title </label></td>
-					<td><input type="text" name="msg.title"
-						class="form-control td1" placeholder="Enter title" size="80"></td>
+					<td><input type="text" minlength="3" maxlength="100"
+						class="form-control td1" placeholder="Enter title" size="80" required/></td>
 				</tr>
 				<tr style="height: 2px"></tr>
 				<tr>
 					<td><label>Content</label></td>
-					<td><textarea name="msg.content" class="form-control td1"
-							rows="9" placeholder="Enter content"></textarea></td>
+					<td><textarea  class="form-control td1 required" minlength="20" maxlength="1000" 
+							rows="9" placeholder="Enter content" type="text" required></textarea></td>
 				</tr>
 				<tr>
 					<td><label>Location</label></td>
-					<td><select name="msg.location" class="form-control td2">
+					<td><select name="msg.location" class="form-control td2" required>
 							<option></option>
 							<option>NY</option>
 							<option>CA</option>
@@ -124,7 +127,7 @@
 			<div class="div11">
 				<button type="submit" class="btn btn-primary btn-lg font3">Submit</button>
 			</div>
-
+			<fieldset>
 		</form>
 
 	</div>

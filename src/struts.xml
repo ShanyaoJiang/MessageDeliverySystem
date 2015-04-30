@@ -45,6 +45,11 @@
 				<result name="Success" type="json">
 					<param name="root">json</param>
 				</result>
-			</action>	
+			</action>
+			<action name="getCount" class="wjteam.actions.ForCounts">
+			    <result name="Success" type="json">
+			    	<param name="root">json</param>
+			    </result>
+			</action> 
     </package>
 </struts>

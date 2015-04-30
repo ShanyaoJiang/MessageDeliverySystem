@@ -74,7 +74,7 @@
 			<tbody id="tbody4p">
 			</tbody>
 		</table>
-		<ul id="pagination" class="pagination-sm"></ul>	
+		<ul id="pagination" class="pagination"></ul>	
 	</div>
 	<div class="div10">
 		<form action="submitMessage" method="POST">
@@ -93,7 +93,7 @@
 				<tr>
 					<td><label>Location</label></td>
 					<td><select name="msg.location" class="form-control td2">
-							<option>Select</option>
+							<option></option>
 							<option>NY</option>
 							<option>CA</option>
 							<option>NH</option>

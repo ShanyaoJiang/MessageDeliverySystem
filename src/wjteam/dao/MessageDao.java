@@ -48,6 +48,9 @@ public class MessageDao {
 				flag = false;
 			}
 		}
+		CountDao dao4C = new CountDao();
+		dao4C.addOne(msg.getLocation());
+		
 		return flag;
 	}
 	public int getNum() {

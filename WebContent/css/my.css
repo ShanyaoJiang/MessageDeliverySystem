@@ -4,7 +4,7 @@ html {
 }
 
 body {
-	background: #fff8dc;
+	/*	background: #fff8dc;*/
 	padding-top: 50px;
 	margin-bottom: 90px;
 	clear: both;
@@ -114,10 +114,11 @@ body {
 	font-style: italic;
 	width: 90%;
 	margin: 20px;
-	border: 3px dashed #ffe4e1;
+	border: 3px;
 	clear: both;
 	overflow: auto;
 	float: left;
+	color: blue;
 }
 
 .td1 {

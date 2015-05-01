@@ -28,7 +28,7 @@
 				</ul>
 			</div>
 			<div id="div4p" class="navbar-form pull-right div13">
-				<a class="btn btn-primary font3" href="#">Log out</a>
+				<a class="btn btn-primary font3" href="logOut">Log out</a>
 			</div>
 			<div id="div4n" class="navbar-form pull-right ">
 				<a class="btn btn-primary font3" href="registerpage">Sign up</a> <a

@@ -73,7 +73,7 @@ public class CountDao {
 	private static String RowSetToJson(ArrayList<String> states, ArrayList<String> counts) {
 	   	 StringBuilder sb=new StringBuilder();
 	   	 try {
-				 sb.append("{\"countData\":");
+			sb.append("{\"countData\":");
 				 sb.append("[");
 				 for(int i = 0; i < states.size(); i++){
 						 if(i != states.size() - 1){

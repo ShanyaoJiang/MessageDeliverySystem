@@ -16,6 +16,7 @@ import wjteam.orm.User;
 public class MessageDao {
 	private Connection con = null;
 	private PreparedStatement psmt =null;
+
 	public MessageDao() {
 		this.con = SQLConnection.getConnection();
 	}
@@ -133,7 +134,6 @@ public class MessageDao {
 			 sb.append("]}");
 			 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
    	 return sb.toString();

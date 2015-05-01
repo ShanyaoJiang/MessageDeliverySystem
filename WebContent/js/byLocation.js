@@ -19,7 +19,7 @@ function pushPages(currpage) {
 		dataType : "json",
 		url : "pushPages",
 		data : "curr=" + (currpage + 1),
-		success : function(json) {
+				success : function(json) {
 			var list = $.parseJSON(json).pageData;
 			count = $.parseJSON(json).pageCount;
 			$.each(list, function(i, n) {

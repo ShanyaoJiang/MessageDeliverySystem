@@ -50,6 +50,9 @@
 			    <result name="Success" type="json">
 			    	<param name="root">json</param>
 			    </result>
+			</action>
+			<action name="logOut" class="wjteam.actions.LogOut"> 
+				<result type="redirect" name="Success">welcome</result>
 			</action> 
     </package>
 </struts>

@@ -21,7 +21,7 @@ public class MessageDao {
 	}
 	public boolean addMessage(Message msg) {
 		boolean flag = true;
-		String sql = "insert into message(author,title,content,location,messageid,authorid) values(?,?,?,?,?,?)";
+		String sql = "insert into message(author,title,content,location,messageid,authorid,date) values(?,?,?,?,?,?,?)";
 		try {
 			psmt = this.con.prepareStatement(sql);
 			psmt.setString(1, msg.getAuthor());
@@ -30,6 +30,7 @@ public class MessageDao {
 			psmt.setString(4, msg.getLocation());
 			psmt.setString(5, msg.getMessageId());
 			psmt.setString(6, msg.getAuthorId());
+			psmt.setString(7, msg.getDate());
 			psmt.execute();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -79,7 +80,7 @@ public class MessageDao {
 	public String getTitles(int curr) {
 		ArrayList<String> titles = new ArrayList<String>();
 		ArrayList<String> authors = new ArrayList<String>();
-		String sql = "select title, authorid from message order by messageid limit ";
+		String sql = "select title, authorid from message order by date desc limit ";
 		String sqln = "SELECT count(*) FROM message";
 		int count = 0;
 		int tmp = (curr - 1) * 15;

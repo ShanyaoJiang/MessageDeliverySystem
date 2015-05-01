@@ -5,6 +5,8 @@ import com.opensymphony.xwork2.ActionSupport;
 import wjteam.dao.MessageDao;
 import wjteam.orm.Message;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.UUID;        
 
@@ -22,6 +24,11 @@ public class Delivery extends ActionSupport implements SessionAware{
 		MessageDao dao = new MessageDao();
 		msg.setAuthor(session.get("userEmail").toString());
 		msg.setAuthorId(session.get("userId").toString());
+	    Date dt = new Date();
+		SimpleDateFormat sdf = 
+		     new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String currentTime = sdf.format(dt);
+		msg.setDate(currentTime);
 		System.out.println(msg.getAuthorId());
 		if(dao.addMessage(msg)) {
 			return "Success";

@@ -84,13 +84,13 @@
 			<table>
 				<tr>
 					<td><label>Title </label></td>
-					<td><input type="text" minlength="3" maxlength="100"
+					<td><input type="text" name="msg.title" minlength="3" maxlength="100"
 						class="form-control td1" placeholder="Enter title" size="80" required/></td>
 				</tr>
 				<tr style="height: 2px"></tr>
 				<tr>
 					<td><label>Content</label></td>
-					<td><textarea  class="form-control td1 required" minlength="20" maxlength="1000" 
+					<td><textarea  name="msg.content" class="form-control td1 required" minlength="20" maxlength="1000" 
 							rows="9" placeholder="Enter content" type="text" required></textarea></td>
 				</tr>
 				<tr>

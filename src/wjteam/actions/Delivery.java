@@ -20,7 +20,13 @@ public class Delivery extends ActionSupport implements SessionAware{
 	private Message msg = new Message();
 	private Map session;
 	public String execute() throws Exception {
-		msg.setMessageId(UUID.randomUUID().toString());
+		String str =UUID.randomUUID().toString();
+		String[] temp =str.split("\\-");
+		StringBuilder sb = new StringBuilder();
+		for(int i=0;i<temp.length;i++){
+			sb.append(temp[i]);
+		}
+		msg.setMessageId(sb.toString());
 		MessageDao dao = new MessageDao();
 		msg.setAuthor(session.get("userEmail").toString());
 		msg.setAuthorId(session.get("userId").toString());

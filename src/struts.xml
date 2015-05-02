@@ -53,6 +53,9 @@
 			</action>
 			<action name="logOut" class="wjteam.actions.LogOut"> 
 				<result type="redirect" name="Success">welcome</result>
-			</action> 
+			</action>
+			<action name="getContent" class="wjteam.actions.GetContent"> 
+				<result name="Success">/pages/message.jsp</result>
+			</action>  
     </package>
 </struts>

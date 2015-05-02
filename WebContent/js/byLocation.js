@@ -24,8 +24,7 @@ function pushPages(currpage) {
 			count = $.parseJSON(json).pageCount;
 			$.each(list, function(i, n) {
 				var trs = "";
-
-				trs += "<tr><td style='width: 80%'><a href='getContent?messageid='" + n.messageid + "'>"+ n.title + "</a></td><td>"
+				trs += "<tr><td style='width: 80%'><a href='getContent?messageid=" + n.messageid + "'>"+ n.title + "</a></td><td>"
 						+ n.author + "</td></tr>";
 				strBody += trs;
 			});

@@ -81,7 +81,8 @@ public class MessageDao {
 	public String getTitles(int curr) {
 		ArrayList<String> titles = new ArrayList<String>();
 		ArrayList<String> authors = new ArrayList<String>();
-		String sql = "select title, authorid from message order by date desc limit ";
+		ArrayList<String> messageIds = new ArrayList<String>();
+		String sql = "select title, authorid,messageid from message order by date desc limit ";
 		String sqln = "SELECT count(*) FROM message";
 		int count = 0;
 		int tmp = (curr - 1) * 15;
@@ -93,6 +94,7 @@ public class MessageDao {
 			while(rs.next()) {
 				titles.add(rs.getString("title"));
 				authors.add(rs.getString("authorid"));
+				messageIds.add(rs.getString("messageid"));
 			}
 			psmt = this.con.prepareStatement(sqln);
 			rs = psmt.executeQuery();
@@ -112,12 +114,47 @@ public class MessageDao {
 				e.printStackTrace();
 			}
 		}
-		String str = RowSetToJson(titles, authors, count, 15);
+		String str = RowSetToJson(titles, authors, messageIds, count, 15);
 		System.out.println(str);
 		return str;
 	}
 	
-    private static String RowSetToJson(ArrayList<String> titles, ArrayList<String> authors, int count,int pageCount){
+	public Message getMessage(String messagiId){
+		ResultSet rs = null;
+		System.out.println(messagiId);
+		String sql = "select * from message where messageid=\""+messagiId+"\"";
+		Message msg = new Message();
+		try{
+			psmt = this.con.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			rs.beforeFirst();
+			while(rs.next()){
+				msg.setMessageId(rs.getString("messageid"));
+				msg.setTitle(rs.getString("title"));
+				msg.setContent(rs.getString("content"));	
+				msg.setAuthorId(rs.getString("authorId"));
+				msg.setLocation(rs.getString("location"));
+				msg.setDate(rs.getTimestamp("date").toString());
+				
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				psmt.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			try{
+				con.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+		} 
+		return msg;		
+	}
+	
+    private static String RowSetToJson(ArrayList<String> titles, ArrayList<String> authors, ArrayList<String> messageIds, int count,int pageCount){
    	 StringBuilder sb=new StringBuilder();
    	 try {
 			 sb.append("{\"pageCount\":\""+count+"\",\"pageData\":");
@@ -125,11 +162,15 @@ public class MessageDao {
 			 for(int i = 0; i < titles.size(); i++){
 					 if(i != titles.size() - 1){
 						 sb.append("{\"title\":\""+titles.get(i)+"\","); 
-						 sb.append("\"author\":\""+authors.get(i)+"\"},");  
+						 sb.append("\"author\":\""+authors.get(i)+"\",");
+						 sb.append("\"messageid\":\""+messageIds.get(i)+"\"},");  
+						 
 
 					 }else{
 						 sb.append("{\"title\":\""+titles.get(i)+"\","); 
-						 sb.append("\"author\":\""+authors.get(i)+"\"}");					 }
+						 sb.append("\"author\":\""+authors.get(i)+"\",");
+						 sb.append("\"messageid\":\""+messageIds.get(i)+"\"}");
+					 }
 				 }
 			 sb.append("]}");
 			 

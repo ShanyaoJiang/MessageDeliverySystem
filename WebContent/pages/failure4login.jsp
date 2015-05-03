@@ -9,9 +9,6 @@
     <link href="css/my.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="js/validator.min.js"></script>
-    <%@ taglib uri="/struts-tags" prefix="s"%> 
- 
   </head>
   <body>
     <div>
@@ -33,28 +30,30 @@
                 <span style="font-style:italic">@WJTeam</span>
             </div>
         </div>
-        <div class="div17 roundCorner" style="border-right:1px solid #6E6A6B; border-left:1px solid #6E6A6B; border-top:1px solid #6E6A6B; border-bottom:1px solid #6E6A6B; border-width:1px; padding-bottom:100px">
-            <div class="font6">
-                
-						<s:property value="msg.title" />
+        <div class="div5">
+            <div class="font4">
+                <h2>Wrong Email or Password, Please try again!</h2>
             </div>
-            	<div class="div15" style="border-bottom:1px solid #6E6A6B; border-width:1px; ">
-            	 <div class="font7">
-            	by
-            	<s:property value="msg.authorId" />
-            	,
-            	<s:property value="msg.location" />
-            	,
-            	<s:property value="msg.date" />
-            	</div>
-            </div>
- 			<div class="div16 font8">
-            	
-            	<s:property value="msg.content" />
-            	
-            	</div>
-   
-    </div>
+            <form action="loginUser" method="POST">
+                <div class="form-group">
+                    <label>Email address</label>
+	            <input type="email" name="user.email" class="form-control" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+	            <label>Password</label>
+                    <input type="password" name="user.password" class="form-control" placeholder="Enter password">
+                </div>
+                <div class="checkbox div4" >
+                    <label>
+     	                <input type="checkbox" disabled>Remember me
+    	   	    </label>
+  	        </div>
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-default font3" href="#">Sign in</button>
+                    <a class="btn btn-primary font3" href="registerpage">Join us</a>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="footer">
         <div class = "div7">

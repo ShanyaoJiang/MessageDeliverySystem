@@ -22,9 +22,15 @@
     		<action name="registerpage">
     		    <result>/pages/register.jsp</result>
     		</action>
+    		<action name="loginfailure">
+    		    <result>/pages/failure4login.jsp</result>
+    		</action>
+    		<action name="submitfailure">
+    		    <result>/pages/failure4submit.jsp</result>
+    		</action>
     		<action name="*User" class="wjteam.actions.UserAction" method="{1}">
     			<result type="redirect" name="Success">welcome</result>
-    			<result type="redirect" name="Failure">welcome</result>
+    			<result type="redirect" name="Failure">loginfailure</result>
     		</action>
     		<action name="checkStatus" class="wjteam.actions.User4AJAX">
     			<result name="Success" type="json">
@@ -38,8 +44,7 @@
 				<interceptor-ref name ="checkLogin"/>
 				<interceptor-ref name="defaultStack"/>  
 				<result type="redirect" name="Success">welcome</result>
-    			<result type="redirect" name="Failure">loginpage</result>
-    			<result type="redirect" name="login">loginpage.action</result>
+    			<result type="redirect" name="login">submitfailure</result>
     		</action>  
 			<action name="pushPages" class="wjteam.actions.ForPages" method="pushPages">
 				<result name="Success" type="json">
@@ -55,7 +60,7 @@
 				<result type="redirect" name="Success">welcome</result>
 			</action>
 			<action name="getContent" class="wjteam.actions.GetContent"> 
-				<result name="Success">/pages/message.jsp</result>
+				<result name="Success">pages/message.jsp</result>
 			</action>  
     </package>
 </struts>

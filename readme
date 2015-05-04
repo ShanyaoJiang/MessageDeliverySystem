@@ -1,3 +1,6 @@
+This is a Struts2 web application.
+Used Struts 2, JavaScript(jQuery, AJAX, JSON), JDBC(MySQL), and BootStrap framework.
+
 All jar files included
 File "db.sql" is database for test
 The schema name is "messagedelivery"

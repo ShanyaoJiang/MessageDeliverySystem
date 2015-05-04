@@ -6,7 +6,8 @@ Used Struts 2, JavaScript(jQuery, AJAX, JSON), JDBC(MySQL), and BootStrap framew
 All jar files included.
 File "db.sql" is database for test.
 The schema name is "messagedelivery".
-If you want to run it, you need JDK  1.8 and MySQL, then create a database named "messagedelivery" and source the "db.sql" file
+If you want to run it, you need JDK  1.8 and MySQL, 
+then create a database named "messagedelivery" and source the "db.sql" file.
 
 
 

@@ -1,5 +1,0 @@
-<html>
-	<body>
-		FAILURE!!!
-	</body>
-</html>

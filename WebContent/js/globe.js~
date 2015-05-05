@@ -1,6 +1,0 @@
-var oDivG = document.getElementById("div4g");
-var oDivL = document.createElement("div");
-oDivL.innerHTML = "<h1>Message Delivery System</h1>";
-oDivL.className="div7";
-oDivG.appendChild(oDivL);
-

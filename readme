@@ -1,5 +1,5 @@
 
-Version 1 completed, implemented registeration management, message delivery management and also message retrieval.
+Version 1 completed, implemented registration management, message delivery management and also message retrieval.
 This is a Struts2 web application.
 Used Struts 2, JavaScript(jQuery, AJAX, JSON), JDBC(MySQL), and BootStrap framework.
 

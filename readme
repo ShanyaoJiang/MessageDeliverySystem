@@ -12,6 +12,8 @@ then create a database named "messagedelivery" and source the "db.sql" file.
 WJTeam: Shanyao Jiang, Boyu Wang
 Gmail: jiangshanyaoatub@gmail.com, bwang24@buffalo.edu
 
+Powered by BootStrap, jQuery, Apache Struts 2 and Java
+
 And also we used http://esimakin.github.io/twbs-pagination/ for paging 
 Here is his license,
 
